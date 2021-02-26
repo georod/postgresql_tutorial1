@@ -38,7 +38,7 @@ R is an open-source computational and statistical program. You can download it f
 
 		# Install libraries (only once)
 		install.packages("DBI") # Generic database connector 
-		#install.packages("RPostgreSQL") # optional
+		#install.packages("RPostgreSQL")
 		#install.packages("rpostgis") # optional
 		
 		# Load library
