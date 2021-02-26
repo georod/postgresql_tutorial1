@@ -43,12 +43,12 @@ R is an open-source computational and statistical program. You can download it f
 		
 		# Load library
 		library(DBI)
-		library(RPostgreSQL) # optional
+		library(RPostgreSQL)
 		library(RPostgis) # optional
 
 
 		# create conection to the db
-        con <- DBI::dbConnect(drv = RPostgres::Postgres(),user='georodco_pubu',password='Covid19Ecuador',host='66.198.240.224',port=5432,dbname='georodco_covid19')
+        con <- DBI::dbConnect(drv = "PostgreSQL", user='georodco_pubu', password='Covid19Ecuador', host='66.198.240.224', port=5432, dbname='georodco_covid19')
 
 		# ask db for table ecu_covid19
 		res <- dbSendQuery(con, "SELECT * FROM ecu_covid19")
