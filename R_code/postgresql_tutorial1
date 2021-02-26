@@ -1,3 +1,6 @@
+# Using R with a relational database (PostgreSQL)
+# 2021-02-26
+
 # Libraries only need to be installed once
 		install.packages("DBI") # Generic database connector 
 		install.packages("RPostgreSQL") # optional
@@ -8,12 +11,12 @@
 		library(RPostgreSQL)
 		library(RPostgis) # optional
 
-# create conection to the db
+		# create conection to the db
 
-        con2 <- DBI::dbConnect(drv = "PostgreSQL", user='georodco_pubu', password='Covid19Ecuador', host='66.198.240.224', port=5432,dbname='georodco_covid19')
+        con <- DBI::dbConnect(drv = "PostgreSQL", user='georodco_pubu', password='Covid19Ecuador', host='66.198.240.224', port=5432,dbname='georodco_covid19')
 
 		# ask db for table ecu_covid19
-		res <- dbSendQuery(con2, "SELECT * FROM ecu_covid19")
+		res <- dbSendQuery(con, "SELECT * FROM ecu_covid19")
 		cv19 <- dbFetch(res)
 		
 		# check number of rows and columns (25x15)
@@ -22,10 +25,12 @@
 		# check out first (6) rows in the table
 		head(cv19)
 		
-        # Working with spatial data found in Postgres
-		#Method 1: use package sf
+        	# Working with spatial data found in Postgres (spatial table: provinces)
+
+		# Method 1: use package sf
 		library(sf)
 		prov <- st_read(con, layer="provinces")
+		
 		library(ggplot2)
 		ggplot(prov) +  geom_sf() + theme_bw()
 		
