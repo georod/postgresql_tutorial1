@@ -14,10 +14,10 @@ This repository provides an intro to PostgreSQL (postgres) database (db).
 
 ## Install Postgres
 
-[PostgreSQL](https://www.postgresql.org/)
-[PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-[PostgreSQL Documentation](https://www.postgresql.org/docs/current/)
-[PostGIS](https://postgis.net/)
+  - [PostgreSQL](https://www.postgresql.org/)
+  - [PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+  - [PostgreSQL Documentation](https://www.postgresql.org/docs/current/)
+  - [PostGIS](https://postgis.net/)
 
 ### Database connection parameters
 
@@ -34,9 +34,9 @@ Using the above parameters you can connect to the db using your prefered choice 
 ## Postgres and R
 R is an open-source computational and statistical program. You can download it from here: [R-project](https://www.r-project.org/)
 
-* Install and load R libraries
+* Using R with data from a Postgres db
 
-		# Instal libraries (only once)
+		# Install libraries (only once)
 		install.packages("DBI") # Generic database connector 
 		#install.packages("RPostgreSQL") # optional
 		#install.packages("rpostgis") # optional
